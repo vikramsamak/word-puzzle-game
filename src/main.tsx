@@ -5,11 +5,14 @@ import { Provider } from "react-redux";
 import { store } from "./app/Store";
 import { routes } from "./routes";
 import "./index.css";
+import NotificationWrapper from "./components/NotificationWrapper";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
-      <RouterProvider router={routes} />
+      <NotificationWrapper>
+        <RouterProvider router={routes} />
+      </NotificationWrapper>
     </Provider>
   </StrictMode>
 );
