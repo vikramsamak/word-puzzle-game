@@ -9,6 +9,7 @@ export interface GameState {
   playerName: string;
   notification: Notification | null;
   gridSize: number;
+  letters: string[];
 }
 
 export interface GridCoordinate {

@@ -15,6 +15,7 @@ const initialState: GameState = {
     isError: false,
   },
   gridSize: 0,
+  letters: [],
 };
 
 const gameSlice = createSlice({
@@ -39,6 +40,11 @@ const gameSlice = createSlice({
     setGridSize: (state, action: PayloadAction<number>) => {
       state.gridSize = action.payload;
     },
+
+    setLetters: (state, action: PayloadAction<string[]>) => {
+      state.letters = action.payload;
+    },
+
     resetGame: () => initialState,
   },
 });
@@ -51,5 +57,6 @@ export const {
   setNotification,
   setGridSize,
   resetGame,
+  setLetters,
 } = gameSlice.actions;
 export default gameSlice.reducer;
