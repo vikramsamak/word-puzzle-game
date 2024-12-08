@@ -59,9 +59,9 @@ function Game() {
               return (
                 <div
                   key={`${rowIndex}-${colIndex}`}
-                  className="flex justify-center items-center h-16 border-2 border-gray-400 rounded"
+                  className="flex justify-center items-center h-16 border-2 border-gray-400 rounded transition-all transform duration-300 ease-in-out hover:scale-110 hover:bg-blue-500 hover:text-white hover:shadow-lg"
                 >
-                  <span className="text-xl font-semibold text-gray-200">
+                  <span className="text-xl font-semibold text-gray-200 transition-all duration-300 ease-in-out">
                     {letter}
                   </span>
                 </div>
