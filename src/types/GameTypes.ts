@@ -8,6 +8,7 @@ export interface GameState {
   selectedWords: string[];
   playerName: string;
   notification: Notification | null;
+  gridSize: number;
 }
 
 export interface GridCoordinate {

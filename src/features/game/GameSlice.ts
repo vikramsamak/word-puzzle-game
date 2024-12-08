@@ -14,6 +14,7 @@ const initialState: GameState = {
     notificationMsg: "",
     isError: false,
   },
+  gridSize: 0,
 };
 
 const gameSlice = createSlice({
@@ -35,6 +36,9 @@ const gameSlice = createSlice({
     setNotification: (state, action: PayloadAction<Notification | null>) => {
       state.notification = action.payload;
     },
+    setGridSize: (state, action: PayloadAction<number>) => {
+      state.gridSize = action.payload;
+    },
     resetGame: () => initialState,
   },
 });
@@ -45,6 +49,7 @@ export const {
   addSelectedWord,
   setPlayerName,
   setNotification,
+  setGridSize,
   resetGame,
 } = gameSlice.actions;
 export default gameSlice.reducer;
