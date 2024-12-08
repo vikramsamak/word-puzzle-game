@@ -10,6 +10,10 @@ export interface GameState {
   notification: Notification | null;
   gridSize: number;
   letters: string[];
+  selectedLetters: string;
+  correctWords: string[];
+  selectedIndexes: number[];
+  foundWords: string[];
 }
 
 export interface GridCoordinate {
