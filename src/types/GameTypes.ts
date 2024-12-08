@@ -29,3 +29,8 @@ export interface APIError {
   message: string;
   statusCode: number;
 }
+
+export type Difficulty_Level_Option = {
+  value: string;
+  label: string;
+};

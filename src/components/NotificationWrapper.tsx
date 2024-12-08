@@ -12,7 +12,7 @@ const NotificationWrapper: React.FC<NotificationWrapperProps> = ({
 
   return (
     <>
-      {notification && (
+      {notification?.notificationMsg && (
         <div className="fixed top-4 right-4 z-50">
           <Toast
             isError={notification.isError}

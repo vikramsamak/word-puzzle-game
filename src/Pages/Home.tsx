@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
 import { setDifficulty, setPlayerName } from "../features/game/GameSlice";
-import { DifficultyLevel } from "../types/GameTypes";
+import { Difficulty_Level_Option, DifficultyLevel } from "../types/GameTypes";
 import { useNavigate } from "react-router-dom";
 import { useGameState } from "../hooks/useAppSelector";
 import { FormEvent } from "react";
 import useNotification from "../hooks/useNotification";
+import { DIFFICULTY_LEVELS_OPTIONS } from "../constants/Constants";
 
 function Home() {
   const { playerName } = useGameState();
@@ -56,9 +57,13 @@ function Home() {
                   dispatch(setDifficulty(e.target.value as DifficultyLevel))
                 }
               >
-                <option value="easy">Easy (6x6 Grid)</option>
-                <option value="medium">Medium (8x8 Grid)</option>
-                <option value="hard">Hard (10x10 Grid)</option>
+                {DIFFICULTY_LEVELS_OPTIONS.map(
+                  (level: Difficulty_Level_Option, index: number) => (
+                    <option key={index} value={level.value}>
+                      {level.label}
+                    </option>
+                  )
+                )}
               </select>
             </div>
 
